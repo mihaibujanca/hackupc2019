@@ -36,8 +36,8 @@ def get_microphone_level():
 
 
 class Logic(BoxLayout):
-    def __init__(self,):
-        super(Logic, self).__init__()
+    def __init__(self,**kwargs):
+        super(Logic, self).__init__(**kwargs)
         self.plot = MeshLinePlot(color=[1, 0, 0, 1])
 
     def start(self):
