@@ -61,7 +61,7 @@ parser.add_argument(
     '-n', '--downsample', type=int, default=30, metavar='N',
     help='display every Nth sample (default: %(default)s)')
 parser.add_argument('-r', '--range', type=float, nargs=2,
-                    metavar=('LOW', 'HIGH'), default=[100, 20000],
+                    metavar=('LOW', 'HIGH'), default=[100, 10000],
                     help='frequency range (default %(default)s Hz)')
 parser.add_argument('-c', '--columns', type=int, default=columns, help='width of spectrogram')
 parser.add_argument(
@@ -115,8 +115,8 @@ def audio_callback(indata, frames, time, status):
 
         line = (gradient[int(np.clip(x, 0, 1) * (len(gradient) - 1))]
                 for x in magnitude[low_bin:low_bin + args.columns])
-        print(fftData[1:].argmax()/fftsize)
-        # print(*line, sep='', end='\x1b[0m\n')
+        # print(fftData[1:].argmax()/fftsize)
+        print(*line, sep='', end='\x1b[0m\n')
     else:
         print('no input')
 #
