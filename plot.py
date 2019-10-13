@@ -3,11 +3,12 @@ import numpy as np
 import time
 import wave
 import matplotlib.pyplot as plt
+import math
 
 
 # open stream
 FORMAT = pyaudio.paInt16
-CHANNELS = 1
+CHANNELS = 2
 RATE = 16000
 
 CHUNK = 512 # RATE / number of updates per second
